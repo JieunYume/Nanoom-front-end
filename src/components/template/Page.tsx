@@ -1,27 +1,24 @@
 import Header from '@components/header';
-import Footer from '@components/footer';
 import { ReactNode } from 'react';
 import Container from '@components/container';
 import { useTheme } from '@emotion/react';
+import BottomNavBar from '@components/navigation/BottomNavBar';
 
 interface PageProps {
   hideHeader?: boolean;
-  hideFooter?: boolean;
   children?: ReactNode;
 }
-function Page({ hideHeader, hideFooter, children }: PageProps) {
+function Page({ hideHeader, children }: PageProps) {
   const theme = useTheme();
   return (
-    <div css={{ backgroundColor: theme.colors.background.darken }}>
+    <div css={{ backgroundColor: theme.colors.background.main}}>
       { !hideHeader && (
         <Header />
       )}
-      <Container direction="column" justify="flex-start">
+      <Container direction="column" justify="flex-start" fixedMobileWidth>
         {children}
       </Container>
-      { !hideFooter && (
-        <Footer />
-      )}
+      <BottomNavBar />
     </div>
   );
 }

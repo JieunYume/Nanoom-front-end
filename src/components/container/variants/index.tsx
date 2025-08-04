@@ -1,6 +1,5 @@
 import Container, { ContainerProps } from '@components/container';
 import { css } from '@emotion/react';
-import { rootWidth } from '@styles/length';
 
 interface DefaultPaddedContainerProps extends ContainerProps {
 }
@@ -14,7 +13,9 @@ export function DefaultPaddedContainer(
     flex-direction: column;
     align-items: center;
     padding: 0 20px;
-    max-width: ${rootWidth};
+    max-width: 420px;
+    width: 100%;
+    margin: 0 auto; // 가운데 정렬
   `;
 
   return (

@@ -1,7 +1,7 @@
-import type { AttendanceInfo, RequireAttendanceDate } from '@/types/attendance';
-import type { Member } from '@/types/member';
-import type { Notice } from '@/types/notice';
-import { Assignment } from '@/types/assignment';
+import type { AttendanceInfo, RequireAttendanceDate } from "@/types/attendance";
+import type { Member } from "@/types/member";
+import type { Notice } from "@/types/notice";
+import { Assignment } from "@/types/assignment";
 
 export interface Study {
   id: number;
@@ -13,10 +13,12 @@ export interface Study {
   profile_image: file;
 }
 
-export type StudyFilter = 'all' | 'open' | 'closed';
-export type StudyRole = '스터디장' | '스터디원' | '미가입';
+export type StudyFilter = "all" | "open" | "closed";
+export type StudyRole = "스터디장" | "스터디원" | "미가입";
 
-export interface StudyRoleResponse { role: StudyRole }
+export interface StudyRoleResponse {
+  role: StudyRole;
+}
 
 export interface ApplyJoinStudyInputs {
   message: string;
@@ -25,7 +27,10 @@ export interface ApplyJoinStudyInputs {
 // TODO: 추후에 profileImage input 구현 후 타입 변경
 // export type StudyCreationRequestBody =
 //  Pick<Study, 'name' | 'description' | 'isOpen' | 'topic' | 'profileImage'>;
-export type StudyCreationRequestBody = Pick<Study, 'name' | 'description' | 'is_open' | 'topic' | 'profile_image'>;
+export type StudyCreationRequestBody = Pick<
+  Study,
+  "name" | "description" | "is_open" | "topic" | "profile_image"
+>;
 export type StudyCreationInputs = StudyCreationRequestBody;
 
 export interface StudySearchRequestQuery {
@@ -56,17 +61,15 @@ export interface StudySearchResponse {
 export type StudyInfoResponse = Study;
 
 export type StudyMember = {
-  member: Pick<Member, 'id' | 'nickname' | 'description' | 'profile_image'>;
+  member: Pick<Member, "id" | "nickname" | "description" | "profile_image">;
   role: StudyRole;
   joined_at: string;
 };
 
 export type StudyMembersResponse = StudyMember[];
 
-export type ExtendedStudyInfo = Study &
-{ members: StudyMember[] } &
-{ study_attendance_info: AttendanceInfo } &
-{ attendance_date_info: RequireAttendanceDate[] } &
-{ notice?: Notice } &
-{ assignment?: Assignment } &
-{ my_role: string };
+export type ExtendedStudyInfo = Study & { members: StudyMember[] } & {
+  study_attendance_info: AttendanceInfo;
+} & { attendance_date_info: RequireAttendanceDate[] } & { notice?: Notice } & {
+  assignment?: Assignment;
+} & { my_role: string };

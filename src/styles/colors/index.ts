@@ -2,10 +2,16 @@ import { Colors } from '@/styles';
 
 const colorTheme: Colors = {
   primary: {
-    main: '#48CFCB',
-    lighten: '#0BD9D3',
-    darken: '#229799',
-    passive: 'rgba(72, 207, 203, 0.13)',
+    main: '#5A9C52',
+    lighten: '#9DC79C', // 연한 세이지 톤
+    darken: '#3D6B36', // 깊이 있는 포레스트 그린
+    passive: 'rgba(90, 156, 82, 0.12)', // main의 soft 버전
+  },
+  accent: {
+    main: '#F7D9A4', // 포인트 베이지 (햇살 느낌)
+    darken: '#E3BD80', // 눌렀을 때 색상
+    lighten: '#FBEED9', // 배경/버튼 hover
+    soft: 'rgba(247, 217, 164, 0.15)', // 포인트용 배경에 사용
   },
   text: {
     prominent: '#191B1C',
@@ -13,7 +19,7 @@ const colorTheme: Colors = {
     subtle: '#B2B6BB',
   },
   background: {
-    main: '#FFFFFF',
+    main: '#F7F9F4',
     lighten: '#FFFFFF',
     darken: '#f6f6f6',
   },

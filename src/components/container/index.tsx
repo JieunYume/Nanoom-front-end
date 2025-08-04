@@ -14,14 +14,23 @@ export interface ContainerProps extends HTMLAttributes<HTMLDivElement> {
   boxSizing?: 'border-box' | 'content-box';
   cssOverride?: CSSObject;
   css?: CSSObject;
+  fixedMobileWidth?: boolean; // ✅ 추가
 }
 
 function Container({
-  cssOverride, css, children, ...rest
+  cssOverride, css, children, fixedMobileWidth, ...rest
 }: ContainerProps) {
   const { containerStyle } = useContainerStyle(rest);
+  const fixedStyle: CSSObject = fixedMobileWidth
+    ? {
+      maxWidth: '420px',
+      width: '100%',
+      margin: '0 auto',
+    }
+    : {};
+
   return (
-    <div css={[containerStyle, cssOverride, css]} {...rest}>
+    <div css={[containerStyle, fixedStyle, cssOverride, css]} {...rest}>
       {children}
     </div>
   );

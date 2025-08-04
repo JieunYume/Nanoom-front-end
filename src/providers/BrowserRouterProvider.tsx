@@ -15,6 +15,7 @@ import AssignEditPage from '@pages/assignment/AssignEditPage';
 import MyStudyPage from '@pages/MyStudyPage';
 import AttendDatePage from '@/pages/AttendDatePage';
 import JoinStudyPage from '@/pages/JoinStudyPage';
+import LoginPage from "@pages/LoginPage.tsx";
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,12 @@ const router = createBrowserRouter([
     path: routePaths.ATTEND,
     element: (
       <AttendDatePage />
+    ),
+  },
+  {
+    path: routePaths.LOGIN,
+    element: (
+      <LoginPage />
     ),
   },
   {

@@ -1,1 +1,1 @@
-export const rootWidth = '1200px';
+export const rootWidth = '100%';

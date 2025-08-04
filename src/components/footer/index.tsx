@@ -10,6 +10,7 @@ function Footer() {
   `;
   return (
     <Container
+      fixedMobileWidth
       height="150px"
       cssOverride={css`background-color: #2c2c2c;`}
     >

@@ -1,5 +1,5 @@
 export const queryKeys = {
-  MAIN_SEARCH_STUDIES: 'search_studies',
+  MAIN_SEARCH_DONATIONS: 'search_donations',
   STUDY_INFO: 'study_info',
   STUDY_INFO_MINIFIED: 'study_info_minified',
   STUDY_MEMBERS: 'study_members',

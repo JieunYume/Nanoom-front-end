@@ -1,15 +1,15 @@
 import Page from '@components/template/Page';
 import Banner from '@features/main/banner';
-import StudyListSection from '@features/main/studyList/StudyListSection';
 import Spacing from '@components/spacing';
 import RankingSection from '@features/main/ranking/RankingSection';
+import DonationListSection from '@features/main/donation/DonationListSection';
 
 function MainPage() {
   return (
     <Page>
       <Banner />
       <RankingSection />
-      <StudyListSection />
+      <DonationListSection />
       <Spacing height={50} />
     </Page>
   );

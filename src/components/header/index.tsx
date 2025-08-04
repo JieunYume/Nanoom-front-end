@@ -14,8 +14,7 @@ import {
 } from 'react';
 import { rootWidth } from '@styles/length';
 import { MemberInfoContext } from '@providers/MemberInfoProvider';
-import LoginModal from '@features/modal/login/LoginModal';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import routePaths from '@constants/routePaths';
 import toast from 'react-hot-toast';
 import StudyCreationModal from '@/features/modal/studyCreation/StudyCreationModal';
@@ -27,6 +26,7 @@ function Header() {
   const toggleContainerRef = useRef<HTMLDivElement>(null);
   const theme = useTheme();
   const [isStudyCreationModalOpen, setIsStudyCreationModalOpen] = useState(false);
+  const navigate = useNavigate();
 
   const toggleDropdown = () => {
     setIsDropdownOpen((prev) => !prev);
@@ -34,7 +34,14 @@ function Header() {
 
   return (
     <>
-      <Container cssOverride={css`background-color: ${theme.colors.background.main}; box-shadow: 0 4px 7px rgba(0, 0, 0, 0.1); position: relative;`}>
+      <Container
+        fixedMobileWidth
+        cssOverride={css`
+          background-color: ${theme.colors.background.main}; 
+          box-shadow: 0 4px 7px rgba(0, 0, 0, 0.1); 
+          position: relative;
+        `}
+      >
         {isStudyCreationModalOpen && (
         <StudyCreationModal
           open={isStudyCreationModalOpen}
@@ -43,7 +50,7 @@ function Header() {
         )}
         <Container
           justify="space-between"
-          padding="20px"
+          padding="15px"
           height="60px"
           width={rootWidth}
         >
@@ -51,7 +58,7 @@ function Header() {
             <img
               src={logo}
               alt="logo"
-              css={{ width: '75px' }}
+              css={{ width: '130px' }}
             />
           </Link>
           <Container
@@ -69,7 +76,7 @@ function Header() {
                 toast.error('로그인이 필요한 작업입니다. 먼저 로그인해주세요.');
               }}
             >
-              스터디 생성하기
+              나눔하기
             </Button>
             <img src={alarm} alt="alarm" css={{ width: '25px' }} />
             <Container
@@ -107,7 +114,7 @@ function Header() {
                   )}
                 </>
               ) : (
-                <Button onClick={() => setIsLoginModalOpen(true)}>
+                <Button onClick={() => navigate('/login')}>
                   로그인
                 </Button>
               )
@@ -116,10 +123,6 @@ function Header() {
           </Container>
         </Container>
       </Container>
-      {
-        isLoginModalOpen
-          && <LoginModal open={isLoginModalOpen} onClose={() => setIsLoginModalOpen(false)} />
-      }
     </>
   );
 }
