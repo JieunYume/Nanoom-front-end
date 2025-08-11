@@ -21,7 +21,7 @@ import StudyCreationModal from '@/features/modal/studyCreation/StudyCreationModa
 
 function Header() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
+  // const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
   const { memberInfo, isLoggedIn } = useContext(MemberInfoContext);
   const toggleContainerRef = useRef<HTMLDivElement>(null);
   const theme = useTheme();

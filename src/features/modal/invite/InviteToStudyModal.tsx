@@ -1,6 +1,5 @@
-import { css, useTheme } from '@emotion/react';
+import { css } from '@emotion/react';
 import { useContext, useEffect, useState } from 'react';
-import CopyToClipboard from 'react-copy-to-clipboard';
 import { MemberInfoContext } from '@providers/MemberInfoProvider';
 import toast from 'react-hot-toast';
 import Avatar from '@/components/avatar';
@@ -17,6 +16,7 @@ import { inviteToStudy } from '@/api/invite';
 interface InviteToStudyProps {
   open: boolean;
   onClose: () => void;
+  // eslint-disable-next-line react/no-unused-prop-types
   copyComplete?: () => void;
   studyId: number;
   studyName: string;
@@ -24,9 +24,8 @@ interface InviteToStudyProps {
 }
 
 export default function InviteToStudyModal({
-  open, onClose, studyId, studyName, copyComplete, profileImage,
+  open, onClose, studyId, studyName, profileImage,
 }: InviteToStudyProps) {
-  const theme = useTheme();
   const { memberInfo } = useContext(MemberInfoContext);
   const [inviteLink, setInviteLink] = useState('');
 
@@ -75,17 +74,6 @@ export default function InviteToStudyModal({
             label="초대 링크"
           />
           <Spacing height={20} />
-          <CopyToClipboard text={inviteLink} onCopy={copyComplete}>
-            <Button
-              variant="primary"
-              css={{
-                width: '100%',
-                borderRadius: theme.corners.medium,
-              }}
-            >
-              링크 공유하기
-            </Button>
-          </CopyToClipboard>
         </Grid>
       </Container>
     </Modal>

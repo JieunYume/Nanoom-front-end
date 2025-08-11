@@ -11,7 +11,7 @@ interface PageProps {
 function Page({ hideHeader, children }: PageProps) {
   const theme = useTheme();
   return (
-    <div css={{ backgroundColor: theme.colors.background.main}}>
+    <div css={{ backgroundColor: theme.colors.background.main }}>
       { !hideHeader && (
         <Header />
       )}

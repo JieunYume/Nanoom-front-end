@@ -7,12 +7,12 @@ const colorTheme: Colors = {
     darken: '#3D6B36', // 깊이 있는 포레스트 그린
     passive: 'rgba(90, 156, 82, 0.12)', // main의 soft 버전
   },
-  accent: {
-    main: '#F7D9A4', // 포인트 베이지 (햇살 느낌)
-    darken: '#E3BD80', // 눌렀을 때 색상
-    lighten: '#FBEED9', // 배경/버튼 hover
-    soft: 'rgba(247, 217, 164, 0.15)', // 포인트용 배경에 사용
-  },
+  // accent: {
+  //   main: '#F7D9A4', // 포인트 베이지 (햇살 느낌)
+  //   darken: '#E3BD80', // 눌렀을 때 색상
+  //   lighten: '#FBEED9', // 배경/버튼 hover
+  //   soft: 'rgba(247, 217, 164, 0.15)', // 포인트용 배경에 사용
+  // },
   text: {
     prominent: '#191B1C',
     moderate: '#71787F',

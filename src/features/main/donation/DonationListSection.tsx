@@ -16,7 +16,7 @@ function DonationListSection() {
   // searchKeyword가 ''인 경우 undefined로 보내야 함.
 
   return (
-    <DefaultPaddedContainer cssOverride={css`background-color: ${theme.colors.background.main};`}>
+    <DefaultPaddedContainer cssOverride={css`background-color: ${theme.colors.background.main}; minHeight: '100vh',`}>
       <DonationFilterSection
         donationFilter={donationFilter}
         setDonationFilter={setDonationFilter}

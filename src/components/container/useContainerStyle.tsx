@@ -1,7 +1,8 @@
 import { css } from '@emotion/react';
 import type { ContainerProps } from '@components/container/index';
 
-function useContainerStyle({
+function
+useContainerStyle({
   direction, justify, align, width, height, gap, padding, boxSizing,
 }: ContainerProps) {
   const containerStyle = css`
